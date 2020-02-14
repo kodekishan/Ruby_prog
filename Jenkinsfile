@@ -1,9 +1,10 @@
 pipeline {
+	agent any
   stages {
     stage('requirements') {
       steps {
         sh 'gem install bundler -v 2.1.4'
-	sh 'gem install minitest'
+				sh 'gem install minitest'
       }
     }
     stage('build') {
