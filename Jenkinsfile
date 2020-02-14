@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('requirements') {
       steps {
-	      sh whoami
+	      sh 'whoami'
        // sh 'gem install bundler -v 2.1.4'
 	//			sh 'gem install minitest'
       }
