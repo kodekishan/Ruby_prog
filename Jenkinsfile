@@ -3,9 +3,9 @@ pipeline {
   stages {
     stage('requirements') {
       steps {
-	      sh 'whoami'
-       sh 'gem install bundler -v 2.1.4'
-       sh 'gem install minitest'
+				sh 'whoami'
+				sh 'gem install bundler -v 2.1.4'
+				sh 'gem install minitest'
       }
     }
     stage('build') {
@@ -15,7 +15,7 @@ pipeline {
     }
     stage('test') {
       steps {
-        sh 'minitest'
+        sh 'gem install minitest'
       }   
     }
   }
