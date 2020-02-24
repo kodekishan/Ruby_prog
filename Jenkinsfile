@@ -1,21 +1,21 @@
 pipeline {
-	agent { docker { image 'ruby' } }
+	agent any
   stages {
-    stage('requirements') {
+    stage('Build') {
       steps {
-				sh 'whoami'
-				sh 'gem install bundler -v 2.1.4'
-				sh 'gem install minitest'
+	sh 'whoami'
+	sh 'gem install bundler -v 2.1.4'
+	sh 'gem install minitest'
       }
     }
-    stage('build') {
+    stage('Testing') {
       steps {
-        sh 'bundle install'
+        sh 'ruby test tests/'
       }
     }
-    stage('test') {
+    stage('Deploy') {
       steps {
-        sh 'gem install minitest'
+        echo 'Code is ready to deploy'
       }   
     }
   }
