@@ -10,7 +10,11 @@ pipeline {
     }
     stage('Testing') {
       steps {
-        sh 'ruby test tests/'
+        sh 'ruby tests/attendent_test.rb'
+	sh 'ruby tests/coordinator_test.rb'
+	sh 'ruby tests/owner_test.rb'
+	sh 'ruby tests/parking_lot_test.rb'
+	sh 'ruby tests/parking_space_test.rb'
       }
     }
     stage('Deploy') {
